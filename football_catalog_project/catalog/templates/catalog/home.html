@@ -1,0 +1,31 @@
+{% extends 'catalog/base.html' %}
+
+{% block title %}Футбольный каталог{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Футбольный каталог</title>
+</head>
+<body>
+    <h1> Добро пожаловать в футбольный каталог!</h1>
+    
+    <h2> Статистика: </h2>
+    <ul>
+        <li> Стран: {{ countries_count }}</li>
+        <li> Клубов: {{ clubs_count }}</li>
+        <li> Игроков: {{ players_count }}</li>
+    </ul>
+    
+    <p>
+        <a href="/catalog/">Перейти к каталогу игроков</a>
+    </p>
+    <p>
+        <a href="/add/"> Добавить нового игрока</a>
+    </p>
+</body>
+</html>
+{% endblock %}

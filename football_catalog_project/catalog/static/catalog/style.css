@@ -1,0 +1,290 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 20px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: url('/static/catalog/back.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    color: #000;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* панель навигации */
+.navbar {
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* лого */
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.logo i {
+    margin-right: 8px;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* ссылки */
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 2rem;
+    transition: color 0.3s;
+    font-size: 1.1rem;
+}
+
+.nav-links a i {
+    margin-right: 6px;
+}
+
+.nav-links a:hover {
+    color: #f1c40f;
+}
+
+/* главная страница */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 30px;
+    margin: 40px 0 120px;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    margin-bottom: 20px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #f1c40f, #e67e22);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+.stat-card {
+    background: rgba(255,255,255,0.1);
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 20px;
+}
+
+.stat-card h3 {
+    font-size: 3rem;
+    color: #f1c40f;
+}
+
+.stat-card p {
+    font-size: 1.3rem;
+    margin-top: 10px;
+}
+
+/* кнопки */
+.btn, .actions .btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #f1c40f, #e67e22);
+    color: #1a1a2e;
+    padding: 12px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 10px;
+}
+
+.actions {
+    text-align: center;
+    margin: 40px 0;
+}
+
+/* Сетка карточек */
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+/* Карточка игрока */
+.player-card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.player-card h3 {
+    font-size: 1.4rem;
+    margin: 10px 0;
+}
+
+.player-card h3 a {
+    color: #f1c40f;
+    text-decoration: none;
+}
+
+.player-number, .position-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+.player-number {
+    background: #f1c40f;
+    color: #1a1a2e;
+}
+
+.position-badge {
+    background: rgba(255,255,255,0.2);
+}
+
+/* страница игрока */
+.detail-container {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 40px;
+    margin: 40px 0;
+}
+
+.detail-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.detail-section h2 {
+    font-size: 1.6rem;
+    color: #f1c40f;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.detail-section li {
+    padding: 10px 0;
+    font-size: 1.1rem;
+    list-style: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.detail-section li strong {
+    display: inline-block;
+    width: 130px;
+}
+
+.form-container {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 650px;
+}
+
+.form-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+/* кнопка добавить игрока */
+button[type="submit"] {
+    background: linear-gradient(135deg, #f1c40f, #e67e22);
+    color: #1a1a2e;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s;
+}
+
+/* всплывающие сообщения */
+.alert {
+    padding: 14px 22px;
+    border-radius: 12px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1rem;
+}
+
+.alert-success {
+    background: rgba(46,204,113,0.2);
+    border-left: 4px solid #2ecc71;
+}
+
+.alert-error {
+    background: rgba(231,76,60,0.2);
+    border-left: 4px solid #e74c3c;
+}

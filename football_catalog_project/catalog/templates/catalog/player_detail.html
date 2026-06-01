@@ -1,0 +1,55 @@
+{% extends 'catalog/base.html' %}
+
+{% block title %}Каталог игроков{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ player.first_name }} {{ player.last_name }} — Футбольный каталог</title>
+</head>
+<body>
+    <h1> {{ player.first_name }} {{ player.last_name }}</h1>
+    
+    <p><a href="/catalog/"> Назад к списку игроков</a> | <a href="/">На главную</a></p>
+    
+    <h2> Основная информация</h2>
+    <ul>
+        <li><strong>Игровой номер:</strong> {{ player.number }}</li>
+        <li><strong>Позиция:</strong> {{ player.position }}</li>
+        <li><strong>Капитан:</strong> {% if player.is_captain %} Да{% else %} Нет{% endif %}</li>
+    </ul>
+    
+    <h2> Клуб</h2>
+    <ul>
+        <li><strong>Название:</strong> {{ player.club.name }}</li>
+        <li><strong>Город:</strong> {{ player.club.city }}</li>
+        <li><strong>Стадион:</strong> {{ player.club.stadium }}</li>
+        <li><strong>Страна:</strong> {{ player.club.country.name }}</li>
+    </ul>
+    
+    <h2> Тренер</h2>
+    {% if player.club.coach %}
+        <ul>
+            <li><strong>Имя:</strong> {{ player.club.coach.first_name }} {{ player.club.coach.last_name }}</li>
+            <li><strong>Возраст:</strong> {{ player.club.coach.age }} лет</li>
+        </ul>
+    {% else %}
+        <p>Нет информации о тренере</p>
+    {% endif %}
+    
+    <h2> Награды</h2>
+    {% if player.awards.all %}
+        <ul>
+            {% for award in player.awards.all %}
+                <li>{{ award.name }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Нет наград</p>
+    {% endif %}
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'catalog/base.html' %}
+
+{% block title %}Каталог игроков{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить игрока</title>
+</head>
+<body>
+    <h1> Добавить нового игрока</h1>
+    
+    <p><a href="/catalog/"> Назад к каталогу</a> | <a href="/">На главную</a></p>
+    
+    <form method="POST">
+        {% csrf_token %}
+        
+        {{ form.as_p }}
+        
+        <button type="submit"> Сохранить игрока</button>
+    </form>
+</body>
+</html>
+{% endblock %}

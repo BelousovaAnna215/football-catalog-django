@@ -1,0 +1,32 @@
+{% extends 'catalog/base.html' %}
+
+{% block title %}Каталог игроков{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог игроков</title>
+</head>
+<body>
+    <h1>Каталог футболистов</h1>
+    
+    <a href="/"> На главную</a>
+    
+    <h2> Список игроков</h2>
+    
+    <ul>
+        {% for player in players %}
+            <li>
+                <a href="/player/{{ player.id }}/"><strong>{{ player.first_name }} {{ player.last_name }}</strong></a>
+                (№{{ player.number }}) 
+                — {{ player.position }} 
+                — {{ player.club.name }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+{% endblock %}
